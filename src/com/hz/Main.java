@@ -12,6 +12,7 @@ public class Main {
 
         ConsoleReader reader = new ConsoleReader();
         ConsoleWriter writer = new ConsoleWriter();
+        AnswerAdapter adapter = new AnswerAdapter();
 
         // ask questions
         String q1 = "Do you like eating vegetables?";
@@ -22,16 +23,11 @@ public class Main {
         // ask question to user
         writer.write(q1);
 
-        // make a list of all true answers
-        String[] trueWords = new String[]{"true", "yes", "oh yeah", "great", "sure", "love to", "of course", "always", "never done otherwise"};
-        List<String> trueList = Arrays.asList(trueWords);
-
         // read and checks response
-        Boolean ans1 = trueList.contains(reader.readLine());
+        Boolean ans1 = adapter.contains(reader.readLine());
 
         // the reader should accept the following values as true:
         // "true", "yes", "oh yeah", "great", "sure", "love to", "of course", "always", "never done otherwise"
-
         if (ans1) {
             writer.write(good);
         } else {
