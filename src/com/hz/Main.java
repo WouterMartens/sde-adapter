@@ -12,8 +12,7 @@ public class Main {
 
         ConsoleReader reader = new ConsoleReader();
         ConsoleWriter writer = new ConsoleWriter();
-//        AnswerAdapter adapter = new AnswerAdapter();
-        BooleanAdapter adapter2 = new WindowsBooleanAdapter(reader);
+        BooleanAdapter adapter = new WindowsBooleanAdapter(reader);
 
         // ask questions
         String q1 = "Do you like eating vegetables?";
@@ -25,8 +24,7 @@ public class Main {
         writer.write(q1);
 
         // read and checks response
-//        Boolean ans1 = adapter.contains(reader.readLine());
-        Boolean ans1 = adapter2.readLineBoolean();
+        Boolean ans1 = adapter.readLineBoolean();
 
         // the reader should accept the following values as true:
         // "true", "yes", "oh yeah", "great", "sure", "love to", "of course", "always", "never done otherwise"
